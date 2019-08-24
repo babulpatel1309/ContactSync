@@ -1,0 +1,79 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+    ext.kotlin_version = '1.3.41'
+    repositories {
+        google()
+        jcenter()
+
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.5.0'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+    ext.coroutines = '1.1.0'
+    ext.room = '2.0.0-rc01'
+    ext.androidx_support_version = '1.0.0'
+    ext.androidx_design = '1.0.0-rc01'
+    ext.anko_version = '0.10.8'
+    ext.work_version = "2.2.0"
+
+    ext.libraries = [
+            appcompat_v7 : [
+                    "androidx.appcompat:appcompat:$androidx_support_version",
+                    "androidx.cardview:cardview:$androidx_support_version",
+                    "androidx.media:media:$androidx_support_version",
+                    "androidx.legacy:legacy-support-v4:$androidx_support_version",
+                    "androidx.recyclerview:recyclerview:$androidx_support_version",
+
+            ],
+            constraint   : [
+                    'androidx.constraintlayout:constraintlayout:1.1.3'
+            ],
+            design       : [
+                    "com.google.android.material:material:$androidx_design"
+            ],
+            coroutines   : [
+                    "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines",
+                    "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutines"
+            ],
+            anko_library : [
+                    "org.jetbrains.anko:anko-commons:$anko_version",
+                    "org.jetbrains.anko:anko-design:$anko_version"
+            ],
+            room         : [
+                    "android.arch.persistence.room:runtime:$room",
+                    "android.arch.persistence.room:rxjava2:$room",
+                    "android.arch.lifecycle:extensions:$room",
+            ],
+            room_compiler: [
+                    "android.arch.persistence.room:compiler:$room",
+                    "android.arch.lifecycle:compiler:$room"
+            ],
+            core_ktx     : [
+                    'androidx.core:core-ktx:1.0.1'
+            ],
+            kotlin       : [
+                    "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+            ],
+            workmanager  : [
+                    "androidx.work:work-runtime-ktx:$work_version"
+            ]
+
+
+    ]
+}
+
+allprojects {
+    repositories {
+        google()
+        jcenter()
+
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

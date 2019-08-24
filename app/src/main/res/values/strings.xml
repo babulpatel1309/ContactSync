@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ContactSync</string>
+    <string name="error_permission">Please grant us permission to perform an operation.</string>
+
+    <string name="notification_title">Periodic Work</string>
+    <string name="notification_content">Syncing contacts</string>
+    <string name="no_record_found">Opps... No record found.</string>
+</resources>
